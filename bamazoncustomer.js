@@ -42,6 +42,7 @@ function queryAllProducts() {
         type: "rawlist",
         choices: function() {
           
+        
           var itemIdArr=[];
          for (var i = 0; i < res.length; i++){
              itemIdArr.push(res[i].product_name);
@@ -85,6 +86,7 @@ function queryAllProducts() {
         function(error){
           if (error) throw err;
           console.log("Item added to your cart. Your cart Total is $" + parseInt(answer.quantity) * chosenItem.price);
+        connection.end();
         }
       );
     }
